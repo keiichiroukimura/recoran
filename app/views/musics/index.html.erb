@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+  <%= form_with(method: :get, local: true) do |form| %>
+    <%= form.text_field :search ,class: "col-form-label" %>
+    <br>
+    <%= form.submit 'music', class: "btn-default"%>
+  <% end %>
+
+  <% if @musics != nil %>
+    <h3>musics</h3>
+      <% @musics.each do |music| %>
+        <div class="grid__item">
+          <%= music.artists[0].name %>
+          <p><a href= <%= music.external_urls["spotify"] %>>track:<%= music.name %></a></p>
+          <p><a href= <%= music.external_urls["spotify"] %>>album:<%= music.album.name %></a></p>
+          <%= music.album.release_date %>
+          <br>
+          <%= image_tag music.album.images[0]["url"], :size => "200x200"%>
+          <br>
+          <div class="audio-wrap" >
+            <audio controls id="audio">
+              <source src= <%= music.preview_url %> type="audio/mp3" width="100px"/>
+            </audio>
+          <div class="audio-btn" id="audio-btn"></div>
+        </div>
+      <% end %>
+        </div>
+  <% end %>
