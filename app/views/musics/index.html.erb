@@ -31,7 +31,7 @@
           <%= form.hidden_field :album_url, value: "#{music.album.external_urls["spotify"]}"%>
           <%= form.hidden_field :track_url, value: "#{music.external_urls["spotify"]}"%>
           <%= form.hidden_field :image, value: "#{music.album.images[0]["url"]}"%>
-          <%= form.submit "これ！！", class: 'btn btn-default '%>
+          <%= form.submit "これ！！", class: 'btn btn-default'%>
         <% end %>
       <% end %>
         </div>
