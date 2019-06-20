@@ -22,6 +22,17 @@
             </audio>
           <div class="audio-btn" id="audio-btn"></div>
         </div>
+        <%= form_with(model:@music, url:musics_path, local:true) do |form| %>
+          <%= form.hidden_field :artist_name, value: "#{music.artists[0].name}"%>
+          <%= form.hidden_field :track_name, value: "#{music.name}"%>
+          <%= form.hidden_field :album_name, value: "#{music.album.name}"%>
+          <%= form.hidden_field :release_date, value: "#{music.album.release_date}"%>
+          <%= form.hidden_field :preview_url, value: "#{music.preview_url}"%>
+          <%= form.hidden_field :album_url, value: "#{music.album.external_urls["spotify"]}"%>
+          <%= form.hidden_field :track_url, value: "#{music.external_urls["spotify"]}"%>
+          <%= form.hidden_field :image, value: "#{music.album.images[0]["url"]}"%>
+          <%= form.submit "これ！！", class: 'btn btn-default '%>
+        <% end %>
       <% end %>
         </div>
   <% end %>
