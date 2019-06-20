@@ -8,8 +8,9 @@ class MusicsController < ApplicationController
   end
   def create
     @music = Music.new(music_params)
+
       if @music.save
-          redirect_to new_post_path
+        redirect_to new_post_path(id: @music.id)
       else
         render 'index'
       end
@@ -21,6 +22,6 @@ class MusicsController < ApplicationController
   end
     
   def music_params
-    params.require(:music).permit(:id, :track_name, :user_id, :image, :artist, :music_url)
+    params.permit(:id, :artist_name, :track_name, :album_name, :release_date, :preview_url, :album_url, :track_url, :image, :user_id)
   end
 end

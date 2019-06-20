@@ -1,0 +1,14 @@
+
+  <div class="grid__item">
+  <%= @music.artist_name %>
+  <p><a href= <%= @music.track_url %>>track:<%= @music.track_name %></a></p>
+  <p><a href= <%= @music.album_url %>>album:<%= @music.album_name %></a></p>
+  <%= @music.release_date %>
+  <br>
+  <%= image_tag @music.image, :size => "200x200"%>
+  <div class="audio-wrap" >
+    <audio controls id="audio">
+      <source src= <%= @music.preview_url %> type="audio/mp3" width="100px"/>
+    </audio>
+  <div class="audio-btn" id="audio-btn"></div>
+  </div>
