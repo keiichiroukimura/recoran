@@ -6,11 +6,13 @@ class PostsController < ApplicationController
     @music = Music.find(params[:id])
   end
   def index
-    @post = Post.find(1)
+    @posts = Post.all
   end
   def create
-    @post = Post.new(post_params)
+    @post = Post.new(content: params[:post][:content])
     if @post.save
+      @join = Join.new(post_id: @post.id, music_id: params[:post][:music_id])
+      @join.save
       flash[:success] = "新規投稿。"
       redirect_to posts_path 
     else

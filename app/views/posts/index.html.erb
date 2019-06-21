@@ -1,3 +1,7 @@
-<%= @post.joins.each do |join| %>
+
+<%= @posts.each do |post| %>
+<%= post.joins.each do |join| %>
   <%= join.music.artist_name%>
+<% end %>
+  <%= post.content %>
 <% end %>
