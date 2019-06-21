@@ -10,16 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_18_085106) do
+ActiveRecord::Schema.define(version: 2019_06_21_082340) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "joins", force: :cascade do |t|
-    t.integer "post_id"
-    t.integer "music_id"
+    t.bigint "post_id"
+    t.bigint "music_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["music_id"], name: "index_joins_on_music_id"
+    t.index ["post_id"], name: "index_joins_on_post_id"
   end
 
   create_table "musics", force: :cascade do |t|
@@ -57,4 +59,6 @@ ActiveRecord::Schema.define(version: 2019_06_18_085106) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "joins", "musics"
+  add_foreign_key "joins", "posts"
 end
