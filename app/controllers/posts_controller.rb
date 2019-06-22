@@ -1,17 +1,17 @@
 # frozen_string_literal: true
-
 class PostsController < ApplicationController
   def new
-    @post = Post.new(post_params)
+    @post = Post.new
     @music = Music.find(params[:id])
   end
   def index
-    @post = Post.all
+    @posts = Post.all
   end
   def create
-    @post = Post.new(post_params)
-    @post.user_id = current_user.id
+    @post = Post.new(content: params[:post][:content])
     if @post.save
+      @join = Join.new(post_id: @post.id, music_id: params[:post][:music_id])
+      @join.save
       flash[:success] = "新規投稿。"
       redirect_to posts_path 
     else
@@ -26,12 +26,6 @@ class PostsController < ApplicationController
   end
   
   def post_params
-    params.permit(:track_name, :artist_name, :image, :image_cache, :content, :user_id)
+    params.require(:post).permit(:content, :user_id, :music_id)
   end 
-  
-  def ensure_correct_user
-    if @post.user_id != current_user.id
-      redirect_to posts_path 
-    end
-  end
 end

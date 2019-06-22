@@ -1,0 +1,12 @@
+
+<%= @posts.each do |post| %>
+<%= post.joins.each do |join| %>
+  <%= join.music.artist_name %>
+  <%= join.music.track_name %>
+  <%= join.music.album_name %>
+  <%= join.music.release_date%> 
+  <%= image_tag join.music.image, :size => "200x200"%>
+  <p><a href= <%= join.music.track_url["spotify"] %>>track:<%= join.music.track_name %></a></p>
+  <p><a href= <%= join.music.album_url["spotify"] %>>album:<%= join.music.album_name %></a></p>
+<% end %>
+  <%= post.content %>

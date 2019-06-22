@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  post_id: 1
-  music_id: 1
+  post: one
+  music: one
 
 two:
-  post_id: 1
-  music_id: 1
+  post: two
+  music: two
