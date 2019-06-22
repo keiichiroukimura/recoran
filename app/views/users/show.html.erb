@@ -1,3 +1,10 @@
-
-<h1>Usersshow</h1>
-<div id="a",style="margin-top: 200px;">あなたの名前:<%= @user.name %></div>
+<div class="show">
+  <%= image_tag "default.jpg"%>  
+<div class="form-group">
+    <%= @user.name %>
+  </div>
+  <br>
+    <%= link_to 'プロフィール編集', edit_user_registration_path, class:"btn btn-default" %>
+    <%= link_to '投稿一覧', posts_path, class:"btn btn-default" %>
+    <%= link_to '投稿する', musics_path, class:"btn btn-default" %>
+</div>
