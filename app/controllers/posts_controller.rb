@@ -5,7 +5,7 @@ class PostsController < ApplicationController
     @music = Music.find(params[:id])
   end
   def index
-    @posts = Post.all
+    @posts = Post.all.order(created_at: "DESC")
   end
   def create
     @post = Post.new(content: params[:post][:content])
