@@ -1,10 +1,11 @@
-<p id="notice"><%= notice %></p>
-  <%= form_with(method: :get, local: true) do |form| %>
+<div id="musics">
+  <p id="notice"><%= notice %></p>
+    <%= form_with(method: :get, local: true) do |form| %>
     <%= form.text_field :search ,class: "col-form-label" %>
     <br>
     <%= form.submit 'music', class: "btn-default"%>
-  <% end %>
-
+    <% end %>
+</div>
   <% if @musics != nil %>
     <h3>musics</h3>
       <% @musics.each do |music| %>
