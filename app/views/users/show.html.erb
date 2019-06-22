@@ -1,5 +1,9 @@
 <div class="show">
-  <%= image_tag "default.jpg", id: "my-image"%>  
+  <% if @user.image.nil? %>
+    <%= image_tag "default.jpg", id: "my-image"%>  
+  <% else %>
+    <%= image_tag(@user.image.url, id: "my-image") if @user.image && @user.image.url  %>
+  <% end %>		
 <div class="form-group">
     <%= @user.name %>
   </div>
