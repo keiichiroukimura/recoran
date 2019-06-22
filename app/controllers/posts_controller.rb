@@ -9,6 +9,7 @@ class PostsController < ApplicationController
   end
   def create
     @post = Post.new(content: params[:post][:content])
+    @post.user_id = current_user.id
     if @post.save
       @join = Join.new(post_id: @post.id, music_id: params[:post][:music_id])
       @join.save
