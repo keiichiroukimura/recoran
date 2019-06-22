@@ -8,3 +8,33 @@
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22); 
   height: 650px;
 }
+
+.card__post {
+  background: #ffffff;
+  padding: 5px;
+  /* margin: 130px auto; */
+  padding: 0;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22); 
+  height: 600px;
+}
+
+.card-header {
+  padding: 2rem;
+  margin-bottom: 0;
+  background-color: rgba(0,0,0,.03);
+  border-bottom: 1px solid rgba(0,0,0,.125);
+}
+
+.card-body {
+  padding: 0.9rem;
+}
+
+#audio__post{
+  width:245px;
+  
+}
+
+div#post_date {
+  font-size: 12px;
+  margin-top: 90px;
+}
