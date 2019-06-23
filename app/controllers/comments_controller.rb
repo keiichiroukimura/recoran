@@ -8,6 +8,7 @@ class CommentsController < ApplicationController
       if @comment.save
         format.js { render :index }
       else
+        byebug
         format.html { redirect_to post_path(@post), notice: '投稿できませんでした...' }
       end
     end
@@ -16,6 +17,6 @@ class CommentsController < ApplicationController
   private
   # ストロングパラメーター
   def comment_params
-    params.require(:comment).permit(:post_id, :content)
+    params.require(:comment).permit(:post_id, :content, :user_id)
   end
 end
