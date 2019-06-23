@@ -1,3 +1,4 @@
+  <div id="container">
     <% @posts.each do |post| %>
       <% post.joins.each do |join| %>
         <div class="card__post">
@@ -32,5 +33,6 @@
       <%= post.created_at.to_formatted_s(:without_second) %>
     </div>
     <% end %>
+  </div>
 </div>
  

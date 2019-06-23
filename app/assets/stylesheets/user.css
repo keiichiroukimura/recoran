@@ -34,7 +34,7 @@
 }
 
 .card__show {
-  
+  margin-top: 100px; 
   background: #ffffff;
   padding: 5px;
   /* margin: 130px auto; */

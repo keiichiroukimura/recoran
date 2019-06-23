@@ -66,3 +66,14 @@ a:hover {
   margin-left: 10px;
   width: 30px;
 }
+
+#container {
+  display: grid; /* グリッドレイアウト */
+  grid-template-rows: 100px 50px;
+  grid-template-columns: 200px;
+}
+
+.card__post {
+  grid-row: 1;
+  grid-column: 2
+}
