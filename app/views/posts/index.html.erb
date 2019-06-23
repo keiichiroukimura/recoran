@@ -26,9 +26,9 @@
       <% end %>
       
     <div class="card-footer__index" >
-      
       <%= post.content%>
     </div>
+    <%= link_to 'Show',post_path(post.id )%>
     <div id="post_date">
       <%= post.created_at.to_formatted_s(:without_second) %>
     </div>
