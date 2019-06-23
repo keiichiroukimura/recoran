@@ -20,6 +20,11 @@ class PostsController < ApplicationController
     end
   end
 
+  def show
+    @comments = @post.comments
+    @comment = @post.comments.build
+  end
+
   private
   
   def set_post
