@@ -6,6 +6,9 @@
           <p><%= comment.content %></p>
         </li>
       <% end %>
+      <% if comment.user == current_user %>
+      <p><%= link_to 'コメントを削除する', post_comment_path(comment.post_id, comment.id), method: :delete, remote: true %></p>
+    <% end %>
     <% end %>
   </ul>
 </div>
