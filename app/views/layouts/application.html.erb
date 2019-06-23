@@ -31,8 +31,10 @@
         <%= link_to(posts_path) do %>
           <i class="fas fa-compact-disc fa-2x"></i>
         <% end %>
-        <%= link_to user_path(id: current_user.id) do %>
-          <i class="far fa-user-circle fa-2x"></i>
+        <% if user_signed_in? %>
+          <%= link_to user_path(id: current_user.id) do %>
+            <i class="far fa-user-circle fa-2x"></i>
+          <% end %>
         <% end %>
       </div>
     </header>
