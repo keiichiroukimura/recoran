@@ -24,6 +24,17 @@
       <% if alert %>
         <p class="alert alert-error"><%= alert %></p>
       <% end %>
+      <div id="button">
+        <%= link_to(musics_path) do %>
+          <i class="fas fa-search fa-2x" ></i>
+        <% end %>
+        <%= link_to(posts_path) do %>
+          <i class="fas fa-compact-disc fa-2x"></i>
+        <% end %>
+        <%= link_to user_path(id: current_user.id) do %>
+          <i class="far fa-user-circle fa-2x"></i>
+        <% end %>
+      </div>
     </header>
   <%= yield %>
   </body>

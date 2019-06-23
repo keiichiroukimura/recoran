@@ -26,3 +26,27 @@
 body {
   background-color: whitesmoke;
 }
+
+
+a {
+  color: #000000;
+}
+a:hover {
+  color: grey;
+}
+
+div#button {
+  text-align: right;
+  margin-top: 30px;
+  margin-right: 250px;
+}
+
+.fa-compact-disc:before {
+  content: "\f51f";
+  margin-left: 30px;
+}
+
+.fa-user-circle:before {
+  content: "\f2bd";
+  margin-left: 30px;
+}

@@ -2,7 +2,7 @@
 class PostsController < ApplicationController
   def new
     @post = Post.new
-    @music = Music.find(params[:id])
+    @music = Music.find(id: current_user.id)
   end
   def index
     @posts = Post.all.order(created_at: "DESC")
