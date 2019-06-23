@@ -10,7 +10,9 @@ devise_scope :user do
 end
   resources :users, only: [:show]
   resources :musics
-  resources :posts
+  resources :posts do
+    resources :comments
+  end
   resources :joins, only: [:create, :destroy]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
