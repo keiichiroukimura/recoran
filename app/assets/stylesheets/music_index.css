@@ -20,18 +20,36 @@ a:hover {
   color: grey;
 }
 
-audio#audio {
-  width: 234px;
+#musics {
+  text-align: center;
 }
 
-.grid__item {
-  margin-top: 30px;
-	display: inline-block;
-	width: 15.0em;
-	height: 22em;
-	font-size: 1em;
-	border-radius: 30px;
-	background: #f1f1f1;
-	color: #333;
-	text-align: center;
+.card__search {
+  margin-top: 100px; 
+  background: #ffffff;
+  padding: 5px;
+  /* margin: 130px auto; */
+  padding: 0;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22); 
+  height: 450px;
+  border-radius: 3%;
+  width: 16rem;
+}
+
+#audio__search{
+  width:225px;
+}
+
+input.btn.btn-default.search {
+  float: right;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  background: white;
+  border: none;
+  border-bottom: #333;
+} 
+
+input.btn.btn-default.search:active {
+  box-shadow: none;
+  text-shadow: none;
 }

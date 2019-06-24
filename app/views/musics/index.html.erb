@@ -1,40 +1,48 @@
 <div id="musics">
   <p id="notice"><%= notice %></p>
     <%= form_with(method: :get, local: true) do |form| %>
-    <%= form.text_field :search ,class: "col-form-label" %>
+    <%= form.text_field :search ,class:'form-control' %>
     <br>
-    <%= form.submit 'music', class: "btn-default"%>
+    <%= form.submit 'music', class: "btn btn-default music"%>
     <% end %>
 </div>
   <% if @musics != nil %>
-    <h3>musics</h3>
-      <% @musics.each do |music| %>
-        <div class="grid__item">
-          <%= music.artists[0].name %>
-          <p><a href= <%= music.external_urls["spotify"] %>>track:<%= music.name %></a></p>
-          <p><a href= <%= music.external_urls["spotify"] %>>album:<%= music.album.name %></a></p>
-          <%= music.album.release_date %>
-          <br>
-          <%= image_tag music.album.images[0]["url"], :size => "200x200"%>
-          <br>
-          <div class="audio-wrap" >
-            <audio controls id="audio">
-              <source src= <%= music.preview_url %> type="audio/mp3" width="100px"/>
-            </audio>
-          <div class="audio-btn" id="audio-btn"></div>
+  <div class="container">
+  <div class="row">
+    <% @musics.each do |music| %>
+        <div class="col-md-4">
+          <div class="card__search">
+            <div class="card-body" style="height: 12rem;">
+              <%= music.artists[0].name %>
+              <p><a href= <%= music.external_urls["spotify"] %>>track:<%= music.name %></a></p>
+              <p><a href= <%= music.external_urls["spotify"] %>>album:<%= music.album.name %></a></p>
+              <%= music.album.release_date %>
+              <br>
+              <%= image_tag music.album.images[0]["url"], :size => "225x225"%>
+              <br>
+              <div class="audio-wrap" >
+                <audio controls id="audio__search">
+                  <source src= <%= music.preview_url %> type="audio/mp3" >
+                </audio>
+                <div class="audio-btn" id="audio-btn"></div>
+              </div>
+
+              <%= form_with(model:@music, url:musics_path, local:true) do |form| %>
+                <%= form.hidden_field :artist_name, value: "#{music.artists[0].name}"%>
+                <%= form.hidden_field :track_name, value: "#{music.name}"%>
+                <%= form.hidden_field :album_name, value: "#{music.album.name}"%>
+                <%= form.hidden_field :release_date, value: "#{music.album.release_date}"%>
+                <%= form.hidden_field :preview_url, value: "#{music.preview_url}"%>
+                <%= form.hidden_field :album_url, value: "#{music.album.external_urls["spotify"]}"%>
+                <%= form.hidden_field :track_url, value: "#{music.external_urls["spotify"]}"%>
+                <%= form.hidden_field :image, value: "#{music.album.images[0]["url"]}"%>
+                <br>
+                <%= form.submit "choice!!", class: 'btn btn-default search'%>
+              <% end %>
+            </div>
+          </div>
         </div>
-          
-        <%= form_with(model:@music, url:musics_path, local:true) do |form| %>
-          <%= form.hidden_field :artist_name, value: "#{music.artists[0].name}"%>
-          <%= form.hidden_field :track_name, value: "#{music.name}"%>
-          <%= form.hidden_field :album_name, value: "#{music.album.name}"%>
-          <%= form.hidden_field :release_date, value: "#{music.album.release_date}"%>
-          <%= form.hidden_field :preview_url, value: "#{music.preview_url}"%>
-          <%= form.hidden_field :album_url, value: "#{music.album.external_urls["spotify"]}"%>
-          <%= form.hidden_field :track_url, value: "#{music.external_urls["spotify"]}"%>
-          <%= form.hidden_field :image, value: "#{music.album.images[0]["url"]}"%>
-          <%= form.submit "これ！！", class: 'btn btn-default'%>
-        <% end %>
       <% end %>
-        </div>
+    </div>
+    </div>
   <% end %>
