@@ -35,7 +35,7 @@ a {
 a:hover {
   color: grey;
 }
-
+/* ヘッダー部分の遷移ボタン */
 div#button {
   text-align: right;
   margin-top: 30px;
@@ -55,4 +55,9 @@ div#button {
 ul {
   text-align: center;
   margin-top: 30px;
+}
+
+p.alert.alert-notice {
+  text-align: center;
+  margin-top: 25px;
 }
