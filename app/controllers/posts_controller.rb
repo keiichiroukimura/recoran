@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 class PostsController < ApplicationController
+  before_action :set_post, only: [:show, :edit, :update, :destroy ]
   def new
     @post = Post.new
     @music = Music.find(params[:id])
@@ -18,6 +19,12 @@ class PostsController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def destroy
+    @post.destroy
+    flash[:danger] = "投稿を削除しました。"
+    redirect_to user_path
   end
 
   def show

@@ -37,6 +37,9 @@
             <div class="card-footer__show" style="height: 8rem;">
               <%= post.content%>
             </div>
+            <% if post.user_id == current_user.id %>  
+                <%= link_to 'Destroy',post_path(post.id), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
+            <% end %>
           </div>
       </div>
     <% end %>
