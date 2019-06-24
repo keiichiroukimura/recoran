@@ -5,7 +5,7 @@ p {
   text-overflow: ellipsis;;
   margin-top: 0px;
   margin-bottom: 0px; 
-  font-size: 13px;
+  font-size: 15px;
   color: #333;
 }
 
@@ -29,15 +29,14 @@ a:hover {
   background: #ffffff;
   padding: 5px;
   /* margin: 130px auto; */
-  padding: 0;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22); 
-  height: 450px;
+  height: 500px;
   border-radius: 3%;
-  width: 16rem;
+  width: 20rem;
 }
 
 #audio__search{
-  width:225px;
+  width:280px;
 }
 
 input.btn.btn-default.search {
@@ -47,6 +46,7 @@ input.btn.btn-default.search {
   background: white;
   border: none;
   border-bottom: #333;
+  font-size: 23px;
 } 
 
 input.btn.btn-default.search:active {

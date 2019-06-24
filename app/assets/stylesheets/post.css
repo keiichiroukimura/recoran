@@ -35,7 +35,7 @@
 .card-footer__index{
   background-color: rgba(241, 237, 237, 0.03);
   border-top: 1.5px solid rgba(0,0,0,.125);
-  padding: 4px 4px;
+  padding: 10px;
 }
 
 #audio__post{
