@@ -4,7 +4,6 @@
     <title>Recoran</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
@@ -18,23 +17,25 @@
         <%= link_to "新規登録", new_user_registration_path %>
         <%= link_to "ログイン", new_user_session_path %>
       <% end %>
+      <div id="button">
+        <%= link_to(musics_path) do %>
+          <i class="fas fa-search fa-2x" ></i>
+        <% end %>
+        <%= link_to(posts_path) do %>
+          <i class="fas fa-compact-disc fa-2x" ></i>
+        <% end %>
+        <% if user_signed_in? %>
+          <%= link_to user_path(id: current_user.id) do %>
+            <i class="far fa-user-circle fa-2x"></i>
+          <% end %>
+        <% end %>
+      </div>
       <% if notice %>
         <p class="alert alert-notice"><%= notice %></p>
       <% end %>
       <% if alert %>
         <p class="alert alert-error"><%= alert %></p>
       <% end %>
-      <div id="button">
-        <%= link_to(musics_path) do %>
-          <i class="fas fa-search fa-2x" ></i>
-        <% end %>
-        <%= link_to(posts_path) do %>
-          <i class="fas fa-compact-disc fa-2x"></i>
-        <% end %>
-        <%= link_to user_path(id: current_user.id) do %>
-          <i class="far fa-user-circle fa-2x"></i>
-        <% end %>
-      </div>
     </header>
   <%= yield %>
   </body>

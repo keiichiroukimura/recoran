@@ -15,6 +15,7 @@
  *= require_self
  */
  header {
+  z-index: 9999;
   height:100px;
 	background-color: white;
 	width: 100%;
@@ -34,7 +35,7 @@ a {
 a:hover {
   color: grey;
 }
-
+/* ヘッダー部分の遷移ボタン */
 div#button {
   text-align: right;
   margin-top: 30px;
@@ -49,4 +50,14 @@ div#button {
 .fa-user-circle:before {
   content: "\f2bd";
   margin-left: 30px;
+}
+
+ul {
+  text-align: center;
+  margin-top: 30px;
+}
+
+p.alert.alert-notice {
+  text-align: center;
+  margin-top: 25px;
 }
