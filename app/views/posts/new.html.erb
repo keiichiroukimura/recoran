@@ -17,6 +17,7 @@
           <i class="fas fa-compact-disc ">
             <%= form.submit 'play it loud!!' %>
           </i>
+          <%= link_to '選び直す',music_path(id: @music.id), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
     </div>
   </div>
       <% end %>
