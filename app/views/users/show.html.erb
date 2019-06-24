@@ -7,9 +7,11 @@
 <div class="form-group">
     <%= @user.name %>
   </div>
-    <%= link_to 'プロフィール編集', edit_user_registration_path, class:"btn btn-default" %>
-    <%= link_to '投稿一覧', posts_path, class:"btn btn-default" %>
-    <%= link_to '投稿する', musics_path, class:"btn btn-default" %>
+    <% if @user.id == current_user.id %>
+      <%= link_to 'プロフィール編集', edit_user_registration_path, class:"btn btn-default" %>
+      <%= link_to '投稿一覧', posts_path, class:"btn btn-default" %>
+      <%= link_to '投稿する', musics_path, class:"btn btn-default" %>
+    <% end %>
 </div>
 <div class="container">
   <div class="row">
@@ -17,6 +19,9 @@
       <div class="col-md-4">
         <% post.joins.each do |join| %>
           <div class="card__show">
+            <% if post.user_id == current_user.id %>  
+              <%= link_to 'Destroy',post_path(post.id), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default", style: "color: red; float: right;"%>
+            <% end %>
             <div class="card-body" style="height: 29rem;">
               <%= join.music.artist_name %>
               <p><a href= <%= join.music.track_url %>>track:<%= join.music.track_name %></a></p>

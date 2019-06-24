@@ -10,7 +10,7 @@
               <% else %>
                 <%= image_tag(post.user.image.url, id: "index_my_image") if post.user.image && post.user.image.url  %>
               <% end %>
-                <%= post.user.name %>
+              <%= link_to "#{post.user.name}", user_path(id: post.user_id) %>
             </div>
           
             <div class="card-body" style="height: 29rem;">
