@@ -11,7 +11,7 @@
 }
 
 .card__post {
-  margin-top: 120px;
+  margin-top: 30px;
   background: #ffffff;
   padding: 5px;
   /* margin: 130px auto; */
@@ -77,4 +77,12 @@ a:hover {
 .card__post {
   grid-row: 1;
   grid-column: 2
+}
+
+form {
+  text-align: center;
+}
+
+input#artist_name {
+  margin-bottom: 10px;
 }
