@@ -51,13 +51,12 @@
 }
 
 .card__show {
-  margin-top: 100px; 
+  margin-top: 40px; 
   background: #ffffff;
   padding: 5px;
   /* margin: 130px auto; */
-  padding: 0;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22); 
-  height: 500px;
+  height: 580px;
   border-radius: 3%;
   width: 20rem;
 }
@@ -66,4 +65,10 @@
   width: 250px;
   margin: 0 auto;
 } 
+
+.card-footer__show {
+  background-color: rgba(241, 237, 237, 0.03);
+  border-top: 1.5px solid rgba(0,0,0,.125);
+  padding: 5px;
+}
 

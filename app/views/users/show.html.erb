@@ -17,29 +17,28 @@
       <div class="col-md-4">
         <% post.joins.each do |join| %>
           <div class="card__show">
-          <div class="card-body" style="height: 20rem;">
-          <%= join.music.artist_name %>
-            <p><a href= <%= join.music.track_url %>>track:<%= join.music.track_name %></a></p>
-            <p><a href= <%= join.music.album_url %>>album:<%= join.music.album_name %></a></p>
-            <%= join.music.release_date%> 
-            <br>
-            <%= image_tag join.music.image, :size => "280x280"%>
-            <div class="audio-wrap" >
-              <audio controls id="audio__post">
-                <source src= <%= join.music.preview_url %> type="audio/mp3">
-              </audio>
-              <div class="audio-btn" id="audio-btn"></div>
-        </div>
-            <% end %>
-          <div class="card-footer__index" >
-            <%= post.content%>
-          </div>
-            <div id="post_date">
-              <%= post.created_at.to_formatted_s(:without_second) %>
+            <div class="card-body" style="height: 29rem;">
+              <%= join.music.artist_name %>
+              <p><a href= <%= join.music.track_url %>>track:<%= join.music.track_name %></a></p>
+              <p><a href= <%= join.music.album_url %>>album:<%= join.music.album_name %></a></p>
+              <%= join.music.release_date%> 
+              <br>
+              <%= image_tag join.music.image, :size => "280x280"%>
+              <div class="audio-wrap" >
+                <audio controls id="audio__post">
+                  <source src= <%= join.music.preview_url %> type="audio/mp3">
+                </audio>
+              </div>
+              <div id="post_date">
+                <%= post.created_at.to_formatted_s(:without_second) %>
+              </div>
+            </div>
+        <% end %>
+            <div class="card-footer__show" style="height: 8rem;">
+              <%= post.content%>
             </div>
           </div>
-
-        </div>
-        <% end %>
+      </div>
+    <% end %>
   </div>
 </div>
