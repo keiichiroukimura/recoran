@@ -1,7 +1,7 @@
-
+<div class="container">
   <div class="row">
     <% @posts.each do |post| %>
-      <div class="col-md-3">
+      <div class="col-md-4">
         <% post.joins.each do |join| %>
           <div class="card__post">
             <div class="card-header">
@@ -13,28 +13,29 @@
                 <%= post.user.name %>
             </div>
           
-            <div class="card-body" style="height: 20rem;">
+            <div class="card-body" style="height: 29rem;">
               <%= join.music.artist_name %>
               <p><a href= <%= join.music.track_url %>>track:<%= join.music.track_name %></a></p>
               <p><a href= <%= join.music.album_url %>>album:<%= join.music.album_name %></a></p>
               <%= join.music.release_date%> 
-              <br>
               <%= image_tag join.music.image, :size => "280x280"%>
               <div class="audio-wrap" >
                 <audio controls id="audio__post">
                   <source src= <%= join.music.preview_url %> type="audio/mp3">
                 </audio>
-                <div class="audio-btn" id="audio-btn"></div>
               </div>
-              <%= link_to 'Show',post_path(post.id )%>
+                  <%= link_to 'Show',post_path(post.id)%>
+                <div id="post_date">
+                  <%= post.created_at.to_formatted_s(:without_second) %>
+                </div>
+            </div>
         <% end %>
-            <div class="card-footer__index" >
+            <div class="card-footer__index" style="height: 8rem;" >
               <%= post.content%>
-              <div id="post_date">
-                <%= post.created_at.to_formatted_s(:without_second) %>
-              </div>
             </div>
-            </div>
+          </div>    
+      </div>  
     <% end %>
   </div>
+</div>
 
