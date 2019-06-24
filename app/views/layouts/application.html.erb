@@ -17,18 +17,18 @@
         <%= link_to "新規登録", new_user_registration_path %>
         <%= link_to "ログイン", new_user_session_path %>
       <% end %>
-      <% if notice %>
-        <p class="alert alert-notice"><%= notice %></p>
-      <% end %>
-      <% if alert %>
-        <p class="alert alert-error"><%= alert %></p>
-      <% end %>
+      # <% if notice %>
+      #   <p class="alert alert-notice"><%= notice %></p>
+      # <% end %>
+      # <% if alert %>
+      #   <p class="alert alert-error"><%= alert %></p>
+      # <% end %>
       <div id="button">
         <%= link_to(musics_path) do %>
           <i class="fas fa-search fa-2x" ></i>
         <% end %>
         <%= link_to(posts_path) do %>
-          <i class="fas fa-compact-disc fa-2x"></i>
+          <i class="fas fa-compact-disc fa-2x" ></i>
         <% end %>
         <% if user_signed_in? %>
           <%= link_to user_path(id: current_user.id) do %>
