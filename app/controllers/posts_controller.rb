@@ -8,15 +8,19 @@ class PostsController < ApplicationController
   end
   
   def index
-    @posts = Post.all.order(created_at: "DESC")
+    if params[:artist_name].present?
+      @posts= Post.search_track(params[:artist_name])
+    else
+      @posts = Post.all.order(created_at: "DESC")
+    end
   end
   
   def create
     @post = Post.new(content: params[:post][:content])
     @post.user_id = current_user.id
     if @post.save
-      @join = Join.new(post_id: @post.id, music_id: params[:post][:music_id])
-      @join.save
+      @together = Together.new(post_id: @post.id, music_id: params[:post][:music_id])
+      @together.save
       flash[:success] = "新規投稿。"
       redirect_to posts_path 
     else
@@ -43,6 +47,6 @@ class PostsController < ApplicationController
   end
   
   def post_params
-    params.require(:post).permit(:content, :user_id, :music_id)
+    params.require(:post).permit(:track_name, :content, :user_id, :music_id)
   end 
 end

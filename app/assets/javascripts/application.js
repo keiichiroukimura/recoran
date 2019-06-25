@@ -29,7 +29,7 @@ $(function(){
         $preview.append($('<img>').attr({
           src: e.target.result,
           width: "100%",
-          id: "#img_field",
+          id: "#edit__image",
           title: file.name
         }));
       };
