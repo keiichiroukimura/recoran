@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_23_025412) do
+ActiveRecord::Schema.define(version: 2019_06_25_025139) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,15 +23,6 @@ ActiveRecord::Schema.define(version: 2019_06_23_025412) do
     t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_comments_on_post_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
-  end
-
-  create_table "joins", force: :cascade do |t|
-    t.bigint "post_id"
-    t.bigint "music_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["music_id"], name: "index_joins_on_music_id"
-    t.index ["post_id"], name: "index_joins_on_post_id"
   end
 
   create_table "musics", force: :cascade do |t|
@@ -58,6 +49,15 @@ ActiveRecord::Schema.define(version: 2019_06_23_025412) do
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
+  create_table "togethers", force: :cascade do |t|
+    t.bigint "post_id"
+    t.bigint "music_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["music_id"], name: "index_togethers_on_music_id"
+    t.index ["post_id"], name: "index_togethers_on_post_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -74,7 +74,7 @@ ActiveRecord::Schema.define(version: 2019_06_23_025412) do
 
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
-  add_foreign_key "joins", "musics"
-  add_foreign_key "joins", "posts"
   add_foreign_key "posts", "users"
+  add_foreign_key "togethers", "musics"
+  add_foreign_key "togethers", "posts"
 end

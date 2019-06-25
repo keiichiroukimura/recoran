@@ -1,6 +1,5 @@
 class CommentsController < ApplicationController
   def create
-    # Blogをパラメータの値から探し出し,Blogに紐づくcommentsとしてbuildします。
     @post = Post.find(params[:post_id])
     @comment = @post.comments.build(comment_params)
     @comment.user_id = current_user.id
@@ -15,9 +14,9 @@ class CommentsController < ApplicationController
   end
   
   def destroy
-    @comment = Comment.find(params[:id]) #⑤
+    @comment = Comment.find(params[:id])
     if @comment.destroy
-      render :index #⑥
+      render :index 
     end
   end
   

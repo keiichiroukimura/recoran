@@ -20,8 +20,8 @@ class PostsController < ApplicationController
     @post = Post.new(content: params[:post][:content])
     @post.user_id = current_user.id
     if @post.save
-      @join = Join.new(post_id: @post.id, music_id: params[:post][:music_id])
-      @join.save
+      @together = Together.new(post_id: @post.id, music_id: params[:post][:music_id])
+      @together.save
       flash[:success] = "新規投稿。"
       redirect_to posts_path 
     else
