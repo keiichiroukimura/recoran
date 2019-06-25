@@ -26,7 +26,6 @@
                 </audio>
                 <div class="audio-btn" id="audio-btn"></div>
               </div>
-
               <%= form_with(model:@music, url:musics_path, local:true) do |form| %>
                 <%= form.hidden_field :artist_name, value: "#{music.artists[0].name}"%>
                 <%= form.hidden_field :track_name, value: "#{music.name}"%>

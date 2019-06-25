@@ -28,7 +28,6 @@ body {
   background-color: whitesmoke;
 }
 
-
 a {
   color: #000000;
 }
@@ -60,4 +59,13 @@ ul {
 p.alert.alert-notice {
   text-align: center;
   margin-top: 25px;
+}
+
+.fa-arrow-circle-up:hover{
+  background-color:none;
+}
+
+#back-to-top a:hover{
+  background :none;
+  color:black;
 }

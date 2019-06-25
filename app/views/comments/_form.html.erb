@@ -9,13 +9,12 @@
       </ul>
     </div>
   <% end %>
-
   <div class="field">
-    <%= form.label :content %>
-    <%= form.text_area :content %>
+    <%= form.label :コメント！ %>
+    <%= form.text_area :content, class: "form-control" %>
   </div>
-
+  <br>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit '投稿する', class: "btn btn-default comment"%>
   </div>
 <% end %>

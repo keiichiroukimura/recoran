@@ -1,0 +1,15 @@
+.show-text {
+  margin-top: 200px;
+}
+
+.card__comments {
+  margin-top: 40px; 
+  background: #ffffff;
+  padding: 5px;
+  /* margin: 130px auto; */
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22); 
+  height: 580px;
+  border-radius: 1%;
+  width: 30rem;
+  text-align: center;
+}
