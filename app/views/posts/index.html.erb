@@ -1,6 +1,6 @@
 
 <%= form_with(model: @post, method: :get, local: true, url: posts_path) do |form| %>
-  <%= form.text_field :track_name, class:'form-control', style: "margin-top: 130px; text-align: center;"%>
+  <%= form.text_field :artist_name, class:'form-control', style: "margin-top: 130px; text-align: center;"%>
   <%= form.submit 'search', class: "btn btn-default post" %>
 <% end %>
 

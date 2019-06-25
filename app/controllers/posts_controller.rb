@@ -8,9 +8,8 @@ class PostsController < ApplicationController
   end
   
   def index
-    if params[:track_name].present?
-      @posts= Post.joins(:musics).where("track_name LIKE ?", "%#{params[:track_name]}")
-     # @posts = Post.joins.music.search_track(params[:track_name])
+    if params[:artist_name].present?
+      @posts= Post.search_track(params[:artist_name])
     else
       @posts = Post.all.order(created_at: "DESC")
     end
