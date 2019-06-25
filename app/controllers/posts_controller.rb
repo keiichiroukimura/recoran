@@ -8,7 +8,12 @@ class PostsController < ApplicationController
   end
   
   def index
-    @posts = Post.all.order(created_at: "DESC")
+    if params[:track_name].present?
+      @posts= Post.joins(:musics).where("track_name LIKE ?", "%#{params[:track_name]}")
+     # @posts = Post.joins.music.search_track(params[:track_name])
+    else
+      @posts = Post.all.order(created_at: "DESC")
+    end
   end
   
   def create
@@ -43,6 +48,6 @@ class PostsController < ApplicationController
   end
   
   def post_params
-    params.require(:post).permit(:content, :user_id, :music_id)
+    params.require(:post).permit(:track_name, :content, :user_id, :music_id)
   end 
 end
