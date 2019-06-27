@@ -13,3 +13,8 @@ input.btn.btn-default:active {
   box-shadow: none;
   text-shadow: none;
 }
+
+a.btn.btn-default.login {
+  margin-left: 30px;
+  font-size: 20px;
+}
