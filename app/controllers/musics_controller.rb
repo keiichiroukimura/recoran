@@ -5,7 +5,7 @@ RSpotify.authenticate(ENV['SPOTIFY_TOKEN'], ENV['SPOTIFY_SECRET_TOKEN'])
 
 class MusicsController < ApplicationController
   def index
-    if params[:commit].
+    if params[:search].present?
       @musics = RSpotify::Track.search(params[:search])
     else
       render 'index'
