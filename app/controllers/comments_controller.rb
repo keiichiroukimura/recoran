@@ -7,7 +7,6 @@ class CommentsController < ApplicationController
       if @comment.save
         format.js { render :index }
       else
-        byebug
         format.html { redirect_to post_path(@post), notice: '投稿できませんでした...' }
       end
     end

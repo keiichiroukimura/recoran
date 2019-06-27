@@ -1,15 +1,15 @@
-<div class="comments">
-  <ul>
+
+  <h4>コメント一覧</h4>
+  <div class="comments" >
     <% comments.each do |comment| %>
       <% if comment.id.present? %>
-        <li>
+        <div class="comments__index">
           <p><%= "#{comment.user.name}さん"%></p>
           <p><%= comment.content %></p>
-        </li>
       <% end %>
       <% if comment.user == current_user %>
-      <p><%= link_to 'コメントを削除する', post_comment_path(comment.post_id, comment.id), method: :delete, remote: true %></p>
+        <p><%= link_to 'コメントを削除する', post_comment_path(comment.post_id, comment.id), method: :delete, remote: true %></p>
+        </div>
+      <% end %>
     <% end %>
-    <% end %>
-  </ul>
-</div>
+    </div>

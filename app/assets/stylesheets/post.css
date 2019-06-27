@@ -11,7 +11,7 @@
 }
 
 .card__post {
-  margin-top: 30px;
+  margin-top: 80px;
   background: #ffffff;
   padding: 5px;
   /* margin: 130px auto; */
@@ -85,4 +85,12 @@ form {
 
 input#artist_name {
   margin-bottom: 10px;
+}
+
+textarea#post_content {
+  width: 300px;
+}
+
+p.w-nomal {
+  word-wrap: normal;
 }

@@ -1,0 +1,32 @@
+.show-text {
+  margin-top: 200px;
+}
+
+.card__comments {
+  margin-top: 40px; 
+  background: #ffffff;
+  padding: 5px;
+  /* margin: 130px auto; */
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22); 
+  height: 580px;
+  border-radius: 1%;
+  width: 30rem;
+  text-align: center;
+}
+/* 
+.comments {
+  width: 70%;
+  height: 150px;
+  margin-bottom: 1.5em;
+  background-color: #ffffff;
+  border: 1px #c0c0c0 solid;
+  color: #000000; */
+/* } */
+
+.comments__index {
+  width: 300px;
+  height: 100px;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+}
+
