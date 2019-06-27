@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ImageUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
@@ -12,8 +14,9 @@ class ImageUploader < CarrierWave::Uploader::Base
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
+
   def default_url
-    "default.jpg"
+    'default.jpg'
   end
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url(*args)

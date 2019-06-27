@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CommentsController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
@@ -11,15 +13,14 @@ class CommentsController < ApplicationController
       end
     end
   end
-  
+
   def destroy
     @comment = Comment.find(params[:id])
-    if @comment.destroy
-      render :index 
-    end
+    render :index if @comment.destroy
   end
-  
+
   private
+
   # ストロングパラメーター
   def comment_params
     params.require(:comment).permit(:post_id, :content, :user_id)

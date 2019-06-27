@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -5,7 +7,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   validates :name, presence: true
   has_many :posts, dependent: :destroy
-  has_many :comments, dependent: :destroy 
+  has_many :comments, dependent: :destroy
   mount_uploader :image, ImageUploader
   # allow users to update their accounts without passwords
   def update_without_current_password(params, *options)
@@ -19,4 +21,3 @@ class User < ApplicationRecord
     result
   end
 end
-
