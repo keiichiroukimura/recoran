@@ -30,10 +30,14 @@
                   <source src= <%= together.music.preview_url %> type="audio/mp3">
                 </audio>
               </div>
-                  <%= link_to 'Show',post_path(post.id)%>
-                <div id="post_date">
-                  <%= post.created_at.to_formatted_s(:without_second) %>
-                </div>
+                <% if user_signed_in? %>
+                <%= link_to 'Show',post_path(post.id)%>
+                <% else %>
+                  <%= link_to "login!でコメント", new_user_session_path%>
+                <% end %>
+                  <div id="post_date">
+                    <%= post.created_at.to_formatted_s(:without_second) %>
+                  </div>
             </div>
         <% end %>
             <div class="card-footer__index" style="height: 8rem;" >

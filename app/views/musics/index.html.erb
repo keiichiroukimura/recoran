@@ -37,7 +37,7 @@
                   <% if user_signed_in? %>
                     <%= form.submit "choice!!", class: 'btn btn-default search'%>
                   <% else %>
-                  <%= link_to "login!で投稿", new_user_session_path%>
+                    <%= link_to "login!で投稿", new_user_session_path%>
                   <% end %>
               <% end %>
             </div>
