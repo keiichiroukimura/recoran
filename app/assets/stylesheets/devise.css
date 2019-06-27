@@ -1,0 +1,13 @@
+ul {
+  list-style: none;
+}
+
+li {
+  color: red;
+}
+
+p.alert.alert-error {
+  text-align: center;
+  margin-top: 100px;
+  color: red;
+}

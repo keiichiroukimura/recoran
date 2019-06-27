@@ -15,7 +15,7 @@
  *= require_self
  */
  header {
-  z-index: 9999;
+  z-index: 10;
   height:100px;
 	background-color: white;
 	width: 100%;
@@ -39,6 +39,7 @@ div#button {
   text-align: right;
   margin-top: 15px;
   margin-right: 250px;
+  z-index: 20;
 }
 
 .fa-compact-disc:before {
@@ -58,7 +59,7 @@ ul {
 
 p.alert.alert-notice {
   text-align: center;
-  margin-top: 25px;
+  margin-top: -25px;
 }
 
 .fa-arrow-circle-up:hover{
@@ -68,4 +69,11 @@ p.alert.alert-notice {
 #back-to-top a:hover{
   background-color :none;
   color:black;
+}
+
+h4 {
+  margin-left: 150px;
+  z-index: 15;
+  margin-top: 25px;
+  
 }
