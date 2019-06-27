@@ -62,10 +62,10 @@ p.alert.alert-notice {
 }
 
 .fa-arrow-circle-up:hover{
-  background-color:none;
+  background-color :none;
 }
 
 #back-to-top a:hover{
-  background :none;
+  background-color :none;
   color:black;
 }

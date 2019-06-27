@@ -1,21 +1,6 @@
 <div class="container__comments">
   <p id="notice"><%= notice %></p>
 
-  <div class="show-text">
-    <% @post.togethers.each do |together| %>
-      <div class="card__comments">
-        <div class="card-body" style="height: 29rem;">
-          <%= together.music.artist_name %>
-          <p><a href= <%= together.music.track_url %>>track:<%= together.music.track_name %></a></p>
-          <p><a href= <%= together.music.album_url %>>album:<%= together.music.album_name %></a></p>
-          <%= together.music.release_date%> 
-            <br>
-          <%= image_tag together.music.image, :size => "435x435"%>
-        </div>
-      </div>
-    <% end %>
-  </div>
- 
     <p>owner comment!!<p>
       <%= @post.content%>
 
@@ -27,5 +12,5 @@
 
     <!-- コメント入力欄をブログの詳細ページに表示するためのrender -->
     <%= render partial: 'comments/form', locals: { comment: @comment, post: @post } %>
-    <%= link_to '戻る', posts_path, style:"text-align: center;" %>
+    <%= link_to '戻る', posts_path,class:"btn btn-default", style: "text-align: center;" %>
 </div>

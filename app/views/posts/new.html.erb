@@ -12,7 +12,7 @@
     <%= image_tag @music.image, :size => "400x400"%>
     <div class="card-footer" style="height: 1rem;">
       <%= form_with(model: @post, local:true) do |form| %>
-        <%= form.text_area :content, class: 'form-control' %>
+        <%= form.text_area :content, class: 'form-control new' %>
         <%= form.hidden_field :music_id, value: @music.id %>
           <i class="fas fa-compact-disc ">
             <%= form.submit 'play it loud!!' %>

@@ -1,10 +1,8 @@
 $(function(){
-  // #back-to-topを消す
+
   $("#back-to-top").hide();
 
-  // スクロールが十分された時に#back-to-topを表示。スクロールされたら非表示
   $(window).scroll(function(){
-    // this(window要素)がどれだけスクロールしたかをscrollTop()を使って値を取る
     $('#pos').text($(this).scrollTop());
     if ($(this).scrollTop() > 60){
       $("#back-to-top").fadeIn();
