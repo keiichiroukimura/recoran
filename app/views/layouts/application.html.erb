@@ -13,7 +13,7 @@
     <header>
     
       <% if user_signed_in? %>
-        <%= link_to "log out", destroy_user_session_path, method: :delete , class: "btn btn-default" %>
+        <%= link_to "log out", destroy_user_session_path, method: :delete , class: "btn btn-default login" %>
       <% else %>
       <div id="user_session">
         <%= link_to "sign up", new_user_registration_path %>

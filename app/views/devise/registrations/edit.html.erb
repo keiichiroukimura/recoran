@@ -15,7 +15,19 @@
       <label>email</label>
       <%= f.email_field :email, autofocus: true, autocomplete: "email", class:'form-control' %>
     </div>
+    <div class="field">
+      <%= f.label :password %>
+    <% if @minimum_password_length %>
+      <em>(6文字以上)</em>
+    <% end %><br />
+      <%= f.password_field :password, autocomplete: "new-password",class:'form-control' %>
+    </div>
 
+    <div class="field">
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password",class:'form-control'  %>
+    </div>
+  <br>
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
     <% end %>
