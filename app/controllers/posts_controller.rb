@@ -2,18 +2,18 @@
 
 class PostsController < ApplicationController
   before_action :set_post, only: %i[show edit update destroy]
-
+  before_action :authenticate_user!,only: [:show, :destroy ]
   def new
     @post = Post.new
     @music = Music.find(params[:id])
   end
 
   def index
-    @posts = if params[:artist_name].present?
-               Post.search_track(params[:artist_name])
-             else
-               Post.all.order(created_at: 'DESC')
-             end
+     if params[:artist_name].present?
+      @posts = Post.search_track(params[:artist_name])
+    else
+      @posts = Post.all.order(created_at: 'DESC')
+    end
   end
 
   def create
