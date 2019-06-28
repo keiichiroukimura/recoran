@@ -11,7 +11,7 @@ set :repo_url, 'https://github.com/keiichiroukimura/recoran'
 set :branch, ENV['BRANCH'] || 'master'
 
 # deploy先のディレクトリ。
-set :deploy_to, 'var/www/recoran'
+set :deploy_to, '/var/www/recoran'
 
 # シンボリックリンクをはるフォルダ・ファイル
 set :linked_files, %w{.env config/secrets.yml}
