@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'rspotify'
+#require 'rspotify'
 RSpotify.authenticate(ENV['SPOTIFY_TOKEN'], ENV['SPOTIFY_SECRET_TOKEN'])
 
 class MusicsController < ApplicationController
