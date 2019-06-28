@@ -7,8 +7,8 @@ RSpec.describe User, type: :model do
       expect(user).not_to be_valid
     end
     
-    it 'nameが30文字以上だとバリデーションが通らない' do
-      user = FactoryBot.build(:user, name: 'あ' * 31)
+    it 'nameが20文字以上だとバリデーションが通らない' do
+      user = FactoryBot.build(:user, name: 'あ' * 21)
       expect(user).not_to be_valid
     end
   
