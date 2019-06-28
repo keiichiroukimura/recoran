@@ -9,7 +9,7 @@ class Post < ApplicationRecord
   validates :content, presence: true
 
   scope :search_track, lambda { |artist_name|
-    return if track_name.blank?
+    return if artist_name.blank?
     joins(:musics).where('artist_name like ?', "%#{artist_name}%")
   }
 end
