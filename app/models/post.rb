@@ -6,7 +6,7 @@ class Post < ApplicationRecord
   has_many :comments, dependent: :destroy
   belongs_to :user
 
-  validates :content, presence: true
+  validates :content, length: { maximum: 300 }
 
   scope :search_track, lambda { |artist_name|
     return if artist_name.blank?
