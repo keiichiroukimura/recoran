@@ -2,7 +2,7 @@
   <p id="notice"><%= notice %></p>
     <%= form_with(method: :get, local: true) do |form| %>
     <%= form.text_field :search ,:placeholder => "曲名、アーティスト名",class:'form-control',style: "margin-bottom: 10px" %>
-    <%= form.submit 'music', class: "btn btn-default music"%>
+    <%= form.submit '選曲', class: "btn btn-default music"%>
     <% end %>
 </div>
   <% if @musics != nil %>
@@ -35,7 +35,7 @@
                 <%= form.hidden_field :track_url, value: "#{music.external_urls["spotify"]}"%>
                 <%= form.hidden_field :image, value: "#{music.album.images[0]["url"]}"%>
                   <% if user_signed_in? %>
-                    <%= form.submit "choice!!", class: 'btn btn-default search'%>
+                    <%= form.submit "選ぶ!!", class: 'btn btn-default search'%>
                   <% else %>
                     <%= link_to "login!で投稿", new_user_session_path%>
                   <% end %>
