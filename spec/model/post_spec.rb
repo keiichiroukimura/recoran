@@ -8,8 +8,8 @@ RSpec.describe Post, type: :model do
     end
     
     it "user_idがあればバリデーションが通る" do
-      user_a = FactoryBot.create(:user)
-      post = Post.new(content: 'テスト成功', user: user_a)
+      user_c = FactoryBot.create(:third_user)
+      post = Post.new(content: 'テスト成功', user: user_c)
       expect(post).to be_valid
     end
   end

@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe User, type: :model do
-  describe 'name登録時のバリデーション' do
+  context 'name登録時のバリデーション' do
     it 'nameが空ならバリデーションが通らない' do
       user = FactoryBot.build(:user, name: '')
       expect(user).not_to be_valid

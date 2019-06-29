@@ -1,9 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "ユーザー登録のテスト", type: :system do
-  before do
-    FactoryBot.create(:user)
-  end 
+RSpec.describe "ユーザー登録のテスト", type: :system do
     it "ユーザー登録のテスト" do 
     visit new_user_registration_path
     fill_in 'user_name', with: 'jerry garcia'
