@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "ユーザー毎のタスク管理機能", type: :feature do
+RSpec.feature "ユーザー登録のテスト", type: :system do
   before do
     FactoryBot.create(:user)
   end 
@@ -42,6 +42,7 @@ RSpec.feature "ユーザー毎のタスク管理機能", type: :feature do
     click_on "プロフィール編集"
     expect(page).to have_content 'name'
     click_on "退会"
+    page.driver.browser.switch_to.alert.accept
     expect(page).to have_content 'アカウントを削除しました。またのご利用をお待ちしております。'
   end
 end

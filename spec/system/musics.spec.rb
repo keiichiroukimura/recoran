@@ -1,40 +1,30 @@
 require 'rails_helper'
 
-RSpec.feature "タスク管理機能", type: :feature do
+RSpec.feature "musicの選曲、登録のテスト", type: :system do
+  FactoryBot.create(:music)
+  let(:user_a) {FactoryBot.create(:user , name: 'AAA' , email: 'a@co.com')}
   before do
-    FactoryBot.create(:music)
-    FactoryBot.create(:second_task, user: user_a)
+    visit new_user_session_path
+    fill_in 'user_email' , with: user_a.email
+    fill_in 'user_password' , with: user_a.password
+    click_on 'Log in'
   end
-  scenario "タスク一覧のテスト" do
-    visit new_session_path
-    fill_in 'session_email', with: 'crybaby@email.com'
-    fill_in 'session_password', with: '111111'
-    click_on "Log in"
-    expect(page).to have_content 'タスク一覧'
+  scenario "music登録のテスト" do
+    visit musics_path
+    fill_in 'search', with: '魚の骨 鳥の羽根'
+    click_on "選曲"
+    expect(page).to have_content 'POLY LIFE MULTI SOUL'
+    click_on "選ぶ!!"
+    expect(page).to have_content '選び直す'
   end
-  scenario "タスク作成のテスト" do
-    visit new_session_path
-    fill_in 'session_email', with: 'crybaby@email.com'
-    fill_in 'session_password', with: '111111'
-    click_on "Log in"
-    click_on "タスクを登録する"
-    fill_in 'new_title', with: 'test_task_01'
-    fill_in 'new_content', with: 'testtesttest'
-    click_on '登録する'
-    expect(page).to have_content 'test_task_01'
-    expect(page).to have_content 'testtesttest'
-  end
-  scenario "タスク詳細のテスト" do
-    # Task.create!(user_id: '1', title: 'test_task_01', content: 'testtesttest',deadline: Date.today, priority: '高', status: '未着手')
-    visit new_session_path
-    fill_in 'session_email', with: 'crybaby@email.com'
-    fill_in 'session_password', with: '111111'
-    click_on "Log in"
-    all('table tr')[1].click_link '詳細'
-    expect(page).to have_content 'test_task_02'
-    expect(page).to have_content 'samplesample'
-    expect(page).to have_content  Date.today + 1
-    expect(page).to have_content '中'
-    expect(page).to have_content '未着手'
+  scenario "music選び直しのテスト" do
+    visit musics_path
+    fill_in 'search', with: '魚の骨 鳥の羽根'
+    click_on "選曲"
+    expect(page).to have_content 'POLY LIFE MULTI SOUL'
+    click_on "選ぶ!!"
+    expect(page).to have_content '選び直す'
+    click_on "選び直す"
+    page.driver.browser.switch_to.alert.accept
   end
 end
