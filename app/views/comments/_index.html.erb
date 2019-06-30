@@ -1,5 +1,5 @@
-<h5 class='box line-break'style="margin-top: 50px; float: left; margin-left:100px; -100px; margin-right: -400px;">投稿コメント<%= @post.content%></h5>
-  <h4 style="margin-top: 150px; margin-left: 650px;">コメント一覧</h4>
+
+<h4 style="margin-top: 150px; margin-left: 650px;">コメント一覧</h4>
   <div class="comments", style="background-color: white;" >
     <% comments.each do |comment| %>
       <% if comment.id.present? %>
@@ -8,8 +8,9 @@
           <h6><%= comment.content %></h6>
       <% end %>
       <% if comment.user == current_user %>
-          <p><%= link_to 'コメントを削除する', post_comment_path(comment.post_id, comment.id), method: :delete, remote: true %></p>
-        </div>
+        <p><%= link_to 'コメントを削除する', post_comment_path(comment.post_id, comment.id), method: :delete, remote: true %></p>
       <% end %>
-    <% end %>
-    </div>
+        </div>  
+      <% end %>
+  </div>
+  

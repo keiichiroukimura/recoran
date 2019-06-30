@@ -34,6 +34,11 @@
                   <source src= <%= together.music.preview_url %> type="audio/mp3">
                 </audio>
               </div>
+              <% if user_signed_in? %>
+                <%= link_to 'コメント',post_path(post.id)%>
+              <% else %>
+                <%= link_to "login!でコメント", new_user_session_path%>
+              <% end %>
               <div id="post_date">
                 <%= post.created_at.to_formatted_s(:without_second) %>
               </div>
