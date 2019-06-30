@@ -24,16 +24,25 @@
         <h4>recoran</h4>
       <div>
       <div id="button", style="margin-top: 30px;" >
-        <%= link_to(musics_path) do %>
-          <i class="fas fa-search fa-2x" ></i>
-        <% end %>
-        <%= link_to(posts_path) do %>
-          <i class="fas fa-compact-disc fa-2x" ></i>
-        <% end %>
+        <div class="cp_tooltip">
+          <%= link_to(musics_path) do %>
+            <i class="fas fa-search fa-2x" ></i>
+          <% end %>
+            <span class="cp_tooltiptext">投稿作成</span>
+        </div>
+        <div class="cp_tooltip">
+          <%= link_to(posts_path) do %>
+            <i class="fas fa-compact-disc fa-2x" ></i>
+          <% end %>
+            <span class="cp_tooltiptext">投稿一覧</span>
+          </div>
         <% if user_signed_in? %>
+        <div class="cp_tooltip">
           <%= link_to user_path(id: current_user.id) do %>
             <i class="far fa-user-circle fa-2x"></i>
           <% end %>
+            <span class="cp_tooltiptext">マイページ</span>
+          </div>
         <% end %>
       </div>
       <% if notice %>

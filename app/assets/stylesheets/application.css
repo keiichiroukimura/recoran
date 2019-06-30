@@ -82,3 +82,37 @@ h4 {
   font-weight: bold;
 }
 
+.cp_tooltip {
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+}
+.cp_tooltip .cp_tooltiptext {
+	position: absolute;
+	z-index: 1;
+	bottom: 100%;
+	left: 0;
+	visibility: hidden;
+	width: auto;
+	white-space: nowrap;
+	padding: 0.3em 0.5em;
+	transition: opacity 1s;
+	text-align: center;
+	opacity: 0;
+	color: white;
+	border-radius: 6px;
+  background-color: rgb(241, 138, 138);
+  margin-bottom: 5px;
+}
+.cp_tooltip .cp_tooltiptext::after {
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	margin-left: -5px;
+	content: ' ';
+	border: 5px solid transparent;
+}
+.cp_tooltip:hover .cp_tooltiptext {
+	visibility: visible;
+	opacity: 1;
+}

@@ -1,7 +1,7 @@
 <div id="musics">
   <p id="notice"><%= notice %></p>
     <%= form_with(method: :get, local: true) do |form| %>
-    <%= form.text_field :search ,:placeholder => "曲名、アーティスト名",class:'form-control',style: "margin-bottom: 10px" %>
+    <%= form.text_field :search ,:placeholder => "曲、アーティスト、アルバム",class:'form-control',style: "margin-bottom: 10px" %>
     <%= form.submit '選曲', class: "btn btn-default music"%>
     <% end %>
 </div>
@@ -10,7 +10,7 @@
   <div class="row">
     <% @musics.each do |music| %>
         <div class="col-md-4">
-          <div class="card__search">
+          <div class="card__search", style="white-space: nowrap; text-overflow: ellipsis;">
             <div class="card-body" style="height: 12rem;">
               <%= music.artists[0].name %>
               <p><a href= <%= music.external_urls["spotify"] %>>track:<%= music.name %></a></p>
