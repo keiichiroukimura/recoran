@@ -1,11 +1,11 @@
 
   <h4 style="margin-top: 150px; text-align: center; margin-left: -20px;">コメント一覧</h4>
-  <div class="comments">
+  <div class="comments", style="background-color: white;" >
     <% comments.each do |comment| %>
       <% if comment.id.present? %>
         <div class="comments__index">
-          <p><%= "#{comment.user.name}さん"%></p>
-          <p><%= comment.content %></p>
+          <h6><%= "#{comment.user.name}さん"%> <%= comment.created_at.to_formatted_s(:without_second) %></h6>  
+          <h6><%= comment.content %></h6>
       <% end %>
       <% if comment.user == current_user %>
           <p><%= link_to 'コメントを削除する', post_comment_path(comment.post_id, comment.id), method: :delete, remote: true %></p>

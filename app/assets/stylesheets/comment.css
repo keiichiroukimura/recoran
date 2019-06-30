@@ -16,7 +16,7 @@
 .comments {
   margin: 0 auto;
   margin-top: 20px;
-  overflow-y: scroll;
+  overflow: auto;
   height: 300px;
   border-style: solid; border-width: 1px;
   width: 600px;
