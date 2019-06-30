@@ -1,15 +1,11 @@
 <div class="container__comments">
   <p id="notice"><%= notice %></p>
-
-    <p>owner comment!!<p>
-      <%= @post.content%>
-
     <!-- このcomments_areaというHTMLのidを取得して、そのdivの部分だけを更新する -->
-    <div id="comments_area">
+    <div id="comments_area",style="margin-left:">
+    <h5 class='box line-break'style="margin-top: 50px; float: left; margin-left:100px; -100px; margin-right: -400px;">投稿コメント<%= @post.content%></h5>
       <!-- 投稿されたコメント一覧をブログの詳細ページに表示するためのrender -->
       <%= render partial: 'comments/index', locals: { comments: @comments, post: @post } %>
     </div>
-
     <!-- コメント入力欄をブログの詳細ページに表示するためのrender -->
     <%= render partial: 'comments/form', locals: { comment: @comment, post: @post } %>
     <%= link_to '戻る', posts_path,class:"btn btn-default comment", style: "text-align: center;" %>
