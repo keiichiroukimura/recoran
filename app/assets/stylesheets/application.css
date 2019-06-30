@@ -99,9 +99,9 @@ h4 {
 	transition: opacity 1s;
 	text-align: center;
 	opacity: 0;
-	color: black;
+	color: white;
 	border-radius: 6px;
-  background-color: rgb(233, 227, 220);
+  background-color: rgb(241, 138, 138);
   margin-bottom: 5px;
 }
 .cp_tooltip .cp_tooltiptext::after {
