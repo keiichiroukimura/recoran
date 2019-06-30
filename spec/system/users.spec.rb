@@ -1,13 +1,15 @@
 require 'rails_helper'
 
 RSpec.describe "ユーザー登録のテスト", type: :system do
+  before do
+    FactoryBot.create(:user)
+  end 
     it "ユーザー登録のテスト" do 
     visit new_user_registration_path
     fill_in 'user_name', with: 'jerry garcia'
     fill_in 'user_email', with: 'test@sg.com'
     fill_in 'user_password', with: '111111'
     fill_in 'user_password_confirmation', with: '111111'
-    
     click_on "Sign up" 
     expect(page).to have_content 'アカウント登録が完了しました。'
     
