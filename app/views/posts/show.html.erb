@@ -12,5 +12,5 @@
 
     <!-- コメント入力欄をブログの詳細ページに表示するためのrender -->
     <%= render partial: 'comments/form', locals: { comment: @comment, post: @post } %>
-    <%= link_to '戻る', posts_path,class:"btn btn-default", style: "text-align: center;" %>
+    <%= link_to '戻る', posts_path,class:"btn btn-default comment", style: "text-align: center;" %>
 </div>

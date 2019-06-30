@@ -13,20 +13,22 @@
   width: 30rem;
   text-align: center;
 }
-/* 
 .comments {
-  width: 70%;
-  height: 150px;
-  margin-bottom: 1.5em;
-  background-color: #ffffff;
-  border: 1px #c0c0c0 solid;
-  color: #000000; */
-/* } */
-
-.comments__index {
-  width: 300px;
-  height: 100px;
+  margin: 0 auto;
+  margin-top: 20px;
   overflow-y: scroll;
-  scrollbar-width: thin;
+  height: 300px;
+  border-style: solid; border-width: 1px;
+  width: 600px;
 }
 
+.comments__index {
+  width: 600px;
+  height: 100px;
+  margin: 0 auto;
+  background: white;
+}
+
+a.btn.btn-default.comment {
+  margin-left: 690px;
+}

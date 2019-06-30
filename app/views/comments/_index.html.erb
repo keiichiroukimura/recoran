@@ -1,6 +1,6 @@
 
-  <h4>コメント一覧</h4>
-  <div class="comments" >
+  <h4 style="margin-top: 150px; text-align: center; margin-left: -20px;">コメント一覧</h4>
+  <div class="comments">
     <% comments.each do |comment| %>
       <% if comment.id.present? %>
         <div class="comments__index">
@@ -8,7 +8,7 @@
           <p><%= comment.content %></p>
       <% end %>
       <% if comment.user == current_user %>
-        <p><%= link_to 'コメントを削除する', post_comment_path(comment.post_id, comment.id), method: :delete, remote: true %></p>
+          <p><%= link_to 'コメントを削除する', post_comment_path(comment.post_id, comment.id), method: :delete, remote: true %></p>
         </div>
       <% end %>
     <% end %>
