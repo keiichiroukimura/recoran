@@ -76,5 +76,7 @@ gem 'dotenv-rails'
 gem 'rails-i18n'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'fog-aws'
-gem 'unicorn' # アプリケーションサーバのunicorn
-gem 'mini_racer', platforms: :ruby # デプロイ時に必要
+gem 'unicorn' 
+gem 'mini_racer', platforms: :ruby 
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
