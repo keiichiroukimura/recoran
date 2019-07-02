@@ -88,3 +88,11 @@ p.alert.alert-notice {
   width: 350px;
 }
 
+.social-btn {
+  width: 250px;    
+  color: white;
+}
+
+.google-btn {
+  background-color: #dd4b39;
+}

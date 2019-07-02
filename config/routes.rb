@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   # resources :users
   root to: 'posts#index'
   devise_for :users, controllers: {
-    registrations: 'users/registrations'
+    registrations: 'users/registrations',
+    omniauth_callbacks: 'users/omniauth_callbacks'
   }
   resources :users, only: [:show]
   resources :musics
