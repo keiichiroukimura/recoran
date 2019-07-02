@@ -30,7 +30,12 @@
       <%= f.submit "Sign up" , class: 'btn btn-default'%>
     </div>
 <% end %>
-<%= link_to 'Googleでサインアップしてね', user_google_omniauth_authorize_path %>
+    <br>
+    <div class="social-login">
+      <%= link_to user_google_omniauth_authorize_path,class: "btn google-btn social-btn" do %>
+        <i class="fab fa-google"> GOOGLEでサインアップ</i>
+      <% end %>
+    </div>
   </div>
 
 
