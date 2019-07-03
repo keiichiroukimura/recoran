@@ -1,8 +1,8 @@
 <h2>Sign up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-  <div class="signup">
+<div class="signup">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+    
     <div class="field">
       <%= f.label :name %><br />
       <%= f.text_field :name, autofocus: true %>
@@ -30,13 +30,14 @@
       <%= f.submit "Sign up" , class: 'btn btn-default'%>
     </div>
 <% end %>
-    <br>
-    <div class="social-login">
-      <%= link_to user_google_omniauth_authorize_path,class: "btn google-btn social-btn" do %>
-        <i class="fab fa-google"> GOOGLEでサインアップ</i>
-      <% end %>
-    </div>
+<br>
+  <div class="social-login">
+    <%= link_to user_google_omniauth_authorize_path,class: "btn google-btn social-btn" do %>
+      <i class="fab fa-google"> GOOGLEでサインアップ</i>
+    <% end %>
   </div>
+</div>
+
 
 
 
