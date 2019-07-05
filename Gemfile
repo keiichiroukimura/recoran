@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.5'
+gem 'dotenv-rails'
 gem 'carrierwave'
 gem 'jquery-rails'
 gem 'mini_magick'
@@ -72,7 +73,6 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'devise'
-gem 'dotenv-rails'
 gem 'rails-i18n'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'fog-aws'
