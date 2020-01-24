@@ -30,6 +30,8 @@ Ruby 2.5.5<br> Rails 2.5.3<br> Bundler 2.0.1
 ・お気に入りの曲を投稿
 ### コメント機能(Ajax)
 ・投稿に対してのコメント
+### Rspecの実装(テスト)
+  ・system spec
 ### 拡張予定機能
 ・投稿に対してのお気に入り機能<br>
 ・友達フォロー機能<br>
@@ -50,6 +52,9 @@ https://docs.google.com/spreadsheets/d/1ezz_SYUrMdNgmwXDs4ldJpQrXMWizkVzRUairD2L
 ・devise<br>
 ・omniauth<br>
 ・ransack<br>
+・unicorn<br>
+・capistrano<br>
+・aws-sdk-s3
 
 
 
